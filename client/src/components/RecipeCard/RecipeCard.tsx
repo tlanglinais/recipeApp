@@ -1,22 +1,73 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusSquare, faWindowClose, faCaretSquareDown } from "@fortawesome/free-solid-svg-icons";
-import { Recipe, Ingredient } from "@/types/Recipe";
+import { Recipe } from "@/types/Recipe";
 import "./RecipeCard.scss";
 
-const RecipeCard = ({ recipe }: any) => {
+interface Props {
+  recipe: Recipe,
+}
+
+const RecipeCard = ({ recipe }: Props) => {
   const [hoverName, setHoverName] = useState("");
 
-  // const clickHandler = (name: string) => {
-  //   setHoverName(name);
-  //   console.log("param", name);
-  //   console.log("hoverName", hoverName);
-  // };
+  const clickHandler = (name: string) => {
+    setHoverName(name);
+    console.log("param", name);
+    console.log("hoverName", hoverName);
+  };
+
+  // const calculateTotalTime = (prepTime, cookTime) => { }
+
+  console.log(recipe.cook_time, recipe.prep_time)
 
   return (
     <div className={`recipe ${true ? " selected" : ""}`}>
       <h3 className="recipe__name">{recipe.name}</h3>
-      <div className="recipe__total-time">{recipe.pre}</div>
+      <div className="recipe__total-time">
+        {`Time: ${recipe.cook_time.value + recipe.prep_time.value}`}
+      </div>
+
+      <div className="recipe__ingredients">
+        <table>
+          <tbody>
+            {recipe.ingredients.map((ing) => (
+              <tr
+                onMouseOver={(e) => clickHandler(ing.name)}
+                onMouseLeave={(e) => clickHandler("")}
+                className="recipe__ingredient"
+                key={ing.name}
+              // data-name={ing.name}
+              >
+                <td>
+                  {ing.name === hoverName && (
+                    <span className="recipe__ingredient--menu icon">
+                      <FontAwesomeIcon
+                        icon={faPlusSquare}
+                        color="#6930c3"
+                        className="recipe__ingredient--menu-add icon"
+                        onClick={() =>
+                          console.log("Added to shopping list.")
+                        }
+                      />
+                      <FontAwesomeIcon
+                        icon={faCaretSquareDown}
+                        color="#6930c3"
+                        className="recipe__ingredient--menu-close icon"
+                        onClick={() => clickHandler("")}
+                      />
+                    </span>
+                  )}
+                  <span>{ing.name}</span>
+                </td>
+                <td>{ing.amount}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+
       {/* <div class="date">
         <p>{new Date().toLocaleDateString()}</p>
       </div> */}

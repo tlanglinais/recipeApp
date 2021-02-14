@@ -1,14 +1,19 @@
 export interface Recipe {
   id: number,
   name: string,
-  prep_time: number,
-  cook_time: number,
-  servings: number,
+  prep_time: TimeMeasure,
+  cook_time: TimeMeasure,
+  servings: string,
   ingredients: Array<Ingredient>,
   steps: Array<string>,
 }
 
 export interface Ingredient {
   name: string,
-  amount: string,
+  amount?: string,
+}
+
+export interface TimeMeasure {
+  unit: string,
+  value: number
 }

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import { Sidebar, RecipeCard } from "./components";
-import recipes from "./recipes.js";
-import "./styles.scss";
+import React, { useState } from 'react';
+import RecipeCard from './components/RecipeCard/RecipeCard';
+import { Recipe } from '@/types/Recipe';
+import recipes from './recipes';
+import './styles.scss';
 
 export default function App() {
-  const [selectedRecipe, setSelectedRecipe] = useState(recipes[0]);
+  const [selectedRecipe, setSelectedRecipe] = useState<Recipe>(recipes[0]);
 
   return (
     <div className="App">

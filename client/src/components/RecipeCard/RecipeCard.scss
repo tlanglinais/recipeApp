@@ -4,14 +4,21 @@
   box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
   width: fit-content;
   padding: 2rem 1rem;
+  margin: 2rem;
 
-
+  transition: opacity 250ms ease-in-out;
+  
   &:hover {
     .recipe__ingredients {
-      transform: translateY(-50%);
+      opacity: 1;
+      // transform: translateY(-50%);
     }
   }
-
+  
+  &__ingredients {
+    transition: opacity 500ms ease-in-out;
+    opacity: 0;
+  }
 
 // .selected {
 //   margin: 2rem 1rem;

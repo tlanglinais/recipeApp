@@ -2,9 +2,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "src/*": [
-        "*"
-      ],
       //   "@/context/*": [
       //     "./context/*"
       //   ],
@@ -14,43 +11,18 @@
       //   "@/utilities/*": [
       //     "./src/utilities/*"
       //   ],
-      //   "@/components/*": [
-      //     "./src/components/*"
-      //   ],
-      "@/types/*": [
-        "./src/types/*"
+      "@/components/*": [
+        "src/components/*"
       ],
-      //   "@/src/*": [
-      //     "./src/*"
-      //   ],
+      "@/types/*": [
+        "src/types/*"
+      ],
+      "@/src/*": [
+        "src/*"
+      ],
       //   "@/pages/*": [
       //     "./pages/*"
       //   ]
     },
-    "outDir": "build/dist",
-    "module": "esnext",
-    "target": "es5",
-    "lib": [
-      "es6",
-      "dom"
-    ],
-    "sourceMap": true,
-    "allowJs": true,
-    "jsx": "react-jsx",
-    "moduleResolution": "node",
-    "rootDir": "src",
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true
   },
 }
