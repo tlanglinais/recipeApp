@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Scrollbar Styling */
+*::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f4f4f4;
+}
+
+/* Comment to hide scrollbar */
+*::-webkit-scrollbar {
+  width: 8px;
+  background-color: #616161;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
+}
+
+body {
+  font-family: "Quicksand", Arial;
+  margin: auto;
+  /*   max-width: 600px; */
+  /*   max-height: 100vh; */
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  /*   max-height: 100vh; */
+}
+
+.sidebar {
+  grid-column: 1 / 2;
+  /*   max-height: 100vh; */
+  /*   border-right: 1px solid black; */
+  /*   overflow-y: auto; */
+}
+
+.sidebar .menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 28px;
+  text-align: center;
+  padding: 1rem 3rem;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+  font-size: 28px;
+  text-align: center;
+  /*   padding: 0 3rem; */
+}
+
+.icon-button {
+  cursor: pointer;
+  &:hover {
+    color: lightblue;
+  }
+}
+
+#search-container {
+  /*   z-index: 999; */
+  /*   transform: translateY(-30px); */
+  transition: all 1s ease-in-out;
+}
+
+.search-container input {
+  width: 90%;
+  line-height: 2.5;
+  font-size: 20px;
+  text-align: center;
+  /*   transition: all 3s linear; */
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 1rem;
+}
+
+.hide {
+  /*   max-height: 0; */
+  /*   transform: translateX(-200%); */
+  /*   transition: all 1s ease-in-out; */
+  display: none;
+}
+
+input:focus {
+  outline-width: 0;
+}
+
+/* .sidebar li:nth-child(odd) {
+  background-color: #f4f4f4;
+} */
+
+.selected {
+  background-color: blue;
+}
+
+.recipes {
+  border-right: 1px solid black;
+  overflow-y: auto;
+}
+
+.recipes li {
+  font-size: 20px;
+  padding: 1rem;
+  border-bottom: 1px solid black;
+}
+
+.recipes li:hover {
+  cursor: pointer;
+  background-color: #d0d0d0;
+}
+
+.recipe {
+  // grid-column: 2 / 3;
+  margin: 0 1rem;
+  margin-top: 3rem;
+  background: #ff7b54;
+}
+
+h1 i {
+  float: right;
+  color: #42b0f4;
+}
+
+i.fa-plus-circle:hover {
+  color: #419bf4;
+  cursor: pointer;
+}
+
+h1 {
+  margin: 1rem 0rem 1.5rem 0;
+}
+
+// .note {
+//   // background-color: #f9f9f9;
+//   box-shadow: #999 1px 1px 4px;
+// }
+
+// .note-header {
+//   // background-color: #eee;
+//   display: flex;
+//   justify-content: space-between;
+//   padding: 0.25rem 1rem;
+//   border-bottom: 1px solid #ddd;
+// }
+
+// .header-buttons {
+//   margin-top: 0.2rem;
+// }
+
+// i.fa-check {
+//   color: #92d788;
+//   padding-right: 5px;
+// }
+
+// i.fa-trash-alt {
+//   color: #c24748;
+// }
+
+// i.fa-trash-alt:hover {
+//   color: #ff4748;
+//   cursor: pointer;
+// }
+
+// .date {
+//   /*   color: #71CBD0; */
+//   font-style: italic;
+//   font-size: 0.8rem;
+//   margin: 0.3rem 0;
+// }
+
+// .note-body {
+//   margin: 0.5rem 1rem;
+// }
+
+// .note-row {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   border-bottom: 1px solid #ddd;
+//   padding-top: 0.5rem;
+//   padding-bottom: 1rem;
+// }
+
+// .recipe-info {
+//   display: grid;
+//   grid-template-columns: repeat(2, 1fr);
+//   grid-template-rows: repeat(2, 1fr);
+//   font-size: 0.8rem;
+//   /*   justify-content: space-around; */
+// }
+
+// #prep-time {
+//   grid-column: 1 / 2;
+//   grid-row: 1;
+// }
+
+// #cook-time {
+//   grid-column: 2 / 3;
+//   grid-row: 1;
+// }
+
+// #servings {
+//   grid-column: 1 / 2;
+//   grid-row: 2;
+// }
+
+// .note-title {
+//   font-size: 1.4rem;
+//   font-weight: bold;
+//   /*   padding-top: 0.5rem; */
+//   /*   padding-bottom: 1rem; */
+// }
+
+// .note-body-content {
+//   padding: 1rem 0;
+//   line-height: 2;
+// }
+
+// .ingredients {
+//   font-size: 0.9rem;
+// }
+
+/* Transition */
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300mx ease-in;
+}
