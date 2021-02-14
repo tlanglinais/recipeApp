@@ -1,24 +1,22 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPlusSquare,
-  faWindowClose,
-  faCaretSquareDown
-} from "@fortawesome/free-solid-svg-icons";
+import { faPlusSquare, faWindowClose, faCaretSquareDown } from "@fortawesome/free-solid-svg-icons";
+import { Recipe, Ingredient } from "@/types/Recipe";
 import "./RecipeCard.scss";
 
-const RecipeCard = ({ recipe, selected }) => {
+const RecipeCard = ({ recipe }: any) => {
   const [hoverName, setHoverName] = useState("");
 
-  const clickHandler = (name) => {
-    setHoverName(name);
-    console.log("param", name);
-    console.log("hoverName", hoverName);
-  };
+  // const clickHandler = (name: string) => {
+  //   setHoverName(name);
+  //   console.log("param", name);
+  //   console.log("hoverName", hoverName);
+  // };
 
   return (
-    <div class={`recipe ${selected ? " selected" : ""}`}>
+    <div className={`recipe ${true ? " selected" : ""}`}>
       <h3 className="recipe__name">{recipe.name}</h3>
+      <div className="recipe__total-time">{recipe.pre}</div>
       {/* <div class="date">
         <p>{new Date().toLocaleDateString()}</p>
       </div> */}

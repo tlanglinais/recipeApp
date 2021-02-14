@@ -3,7 +3,7 @@ import RecipeList from "../RecipeList/RecipeList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faPlus } from "@fortawesome/free-solid-svg-icons";
 
-const Sidebar = ({ recipeList, clickHandler }) => {
+const Sidebar = ({ recipeList, clickHandler }: any) => {
   const [showSearch, setShowSearch] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -15,9 +15,9 @@ const Sidebar = ({ recipeList, clickHandler }) => {
   };
 
   return (
-    <div class="sidebar">
-      <div class="menu">
-        <div class="row">
+    <div className="sidebar">
+      <div className="menu">
+        <div className="row">
           <h3>Recipes</h3>
           <FontAwesomeIcon icon={faPlus} />
           <div onClick={toggleShowSearch} className="icon-button">
