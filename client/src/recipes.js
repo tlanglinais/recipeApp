@@ -1,41 +1,91 @@
 export default [
   {
-    id: 1,
-    name: "Chicken Roulade",
-    prep_time: { unit: "min", value: 30 },
-    cook_time: { unit: "min", value: 45 },
-    servings: "??",
+    id: 0.5,
+    name: 'Banana Bread',
+    type: 'Dessert',
+    prepTime: {unit: 'min', value: 10},
+    cookTime: {unit: 'min', value: 55},
+    servings: '6',
     ingredients: [
       {
-        name: "Chicken Breast",
-        amount: "2 lb."
+        name: 'Bananas',
+        amount: '3',
       },
       {
-        name: "Spinach",
-        amount: "3 Cups"
+        name: 'Butter',
+        amount: '1/3 cup',
       },
       {
-        name: "Tomato",
-        amount: "1"
+        name: 'Baking Soda',
+        amount: '1 tsp',
       },
       {
-        name: "Fresh cheese",
-        amount: ""
-      }
+        name: 'Sugar',
+        amount: '1/2 cup',
+      },
+      {
+        name: 'All-Purpose Flour',
+        amount: '1.5 cups',
+      },
+      {
+        name: 'Large Egg',
+        amount: '1',
+      },
+      {
+        name: 'Vanilla Extract',
+        amount: '1 tsp',
+      },
+      {
+        name: 'Salt',
+        amount: '1 pinch',
+      },
     ],
     steps: [
-      "Cook spinach in pan for 2-3 minutes or until wilted.",
-      "Butterfly chicken.",
-      "Add spinach and cheese and roll. Use toothpick to hold the roll together.",
-      "Sear chicken in pan, 4 min on each side. Finish in 425F oven for 15 min.",
-      "Bake for 25-30 minutes uncovered."
-    ]
+      'Preheat the oven to 350°F (175°C), and butter a 4x8-inch loaf pan.',
+      'In a mixing bowl, mash the ripe bananas with a fork until completely smooth. Stir the melted butter into the mashed bananas.',
+      'Mix in the baking soda and salt. Stir in the sugar, beaten egg, and vanilla extract. Mix in the flour.',
+      'Pour the batter into your prepared loaf pan. Bake for 50 minutes to 1 hour at 350°F (175°C), or until a tester inserted into the center comes out clean.',
+      "Remove from oven and let cool in the pan for a few minutes. Then remove the banana bread from the pan and let cool completely before serving. Slice and serve. (A bread knife helps to make slices that aren't crumbly.)",
+    ],
+  },
+  {
+    id: 1,
+    name: 'Chicken Roulade',
+    type: 'Meal',
+    prepTime: {unit: 'min', value: 30},
+    cookTime: {unit: 'min', value: 45},
+    servings: '??',
+    ingredients: [
+      {
+        name: 'Chicken Breast',
+        amount: '2 lb.',
+      },
+      {
+        name: 'Spinach',
+        amount: '3 Cups',
+      },
+      {
+        name: 'Tomato',
+        amount: '1',
+      },
+      {
+        name: 'Fresh cheese',
+        amount: '',
+      },
+    ],
+    steps: [
+      'Cook spinach in pan for 2-3 minutes or until wilted.',
+      'Butterfly chicken.',
+      'Add spinach and cheese and roll. Use toothpick to hold the roll together.',
+      'Sear chicken in pan, 4 min on each side. Finish in 425F oven for 15 min.',
+      'Bake for 25-30 minutes uncovered.',
+    ],
   },
   // {
   //   id: 2.5,
   //   name: "Roasted Broccoli",
-  //   prep_time: "??",
-  //   cook_time: "??",
+  //   prepTime: "??",
+  //   cookTime: "??",
   //   servings: "??",
   //   ingredients: [{ name: "Broccoli" }, { name: "Olive Oil" }],
   //   steps: [
@@ -47,8 +97,8 @@ export default [
   // {
   //   id: 2,
   //   name: "Instant Pot Chili",
-  //   prep_time: "5",
-  //   cook_time: "25",
+  //   prepTime: "5",
+  //   cookTime: "25",
   //   servings: "6",
   //   ingredients: [
   //     { name: "1 Tablespoon Olive Oil" },
@@ -79,8 +129,8 @@ export default [
   // {
   //   id: 3,
   //   name: "Shrimp Pasta",
-  //   prep_time: "10",
-  //   cook_time: "25",
+  //   prepTime: "10",
+  //   cookTime: "25",
   //   servings: "4",
   //   ingredients: [
   //     { name: "8oz Linguini" },
@@ -108,8 +158,8 @@ export default [
   //   id: 4,
 
   //   name: "Instant Pot Pork Ribs",
-  //   prep_time: "10",
-  //   cook_time: "25",
+  //   prepTime: "10",
+  //   cookTime: "25",
   //   servings: "4",
   //   ingredients: [{ name: "1 Rack Pork Ribs" }, { name: "1 Cup Water" }, { name: "1/4 tbsp Liquid Smoke" }],
   //   steps: [
@@ -125,8 +175,8 @@ export default [
   // {
   //   id: 5,
   //   name: "Blueberry Muffins",
-  //   prep_time: "15",
-  //   cook_time: "25",
+  //   prepTime: "15",
+  //   cookTime: "25",
   //   servings: "8",
   //   ingredients: [
   //     { name: "1 1/2 cups all-purpose flour" },

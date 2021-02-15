@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
+import {Recipe} from '@/types/Recipe';
 import RecipeCard from './components/RecipeCard/RecipeCard';
-import { Recipe } from '@/types/Recipe';
 import recipes from './recipes';
 import './styles.scss';
 

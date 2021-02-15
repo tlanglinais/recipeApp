@@ -25,12 +25,21 @@
 //   background-color: #555;
 // }
 
-// body {
-//   font-family: "Quicksand", Arial;
-//   margin: auto;
-//   /*   max-width: 600px; */
-//   /*   max-height: 100vh; */
-// }
+:root {
+  --color-card-primary: #ff7b54;
+}
+
+body {
+  font-family: 'Quicksand', Arial;
+  margin: auto;
+  /*   max-width: 600px; */
+  /*   max-height: 100vh; */
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
 
 // .app {
 //   display: grid;
@@ -105,7 +114,6 @@
 // /* .sidebar li:nth-child(odd) {
 //   background-color: #f4f4f4;
 // } */
-
 
 // .recipes {
 //   border-right: 1px solid black;

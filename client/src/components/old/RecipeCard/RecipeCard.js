@@ -44,7 +44,7 @@ const RecipeCard = ({ recipe, selected }) => {
       <section className="recipe__side recipe__side--right">
         <div className="container">
           <h3 className="recipe__name">Ingredients</h3>
-          <div class="ingredients">
+          <div className="ingredients">
             <table>
               <tbody>
                 {recipe.ingredients.map((ing) => (
@@ -63,8 +63,7 @@ const RecipeCard = ({ recipe, selected }) => {
                             color="#6930c3"
                             className="recipe__ingredient--menu-add icon"
                             onClick={() =>
-                              console.log("Added to shopping list.")
-                            }
+                              console.log("Added to shopping list.")}
                           />
                           <FontAwesomeIcon
                             icon={faCaretSquareDown}

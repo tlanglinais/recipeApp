@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import RecipeList from "../RecipeList/RecipeList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faPlus } from "@fortawesome/free-solid-svg-icons";
+import RecipeList from "../RecipeList/RecipeList";
 
 const Sidebar = ({ recipeList, clickHandler }: any) => {
   const [showSearch, setShowSearch] = useState(false);
@@ -31,7 +31,7 @@ const Sidebar = ({ recipeList, clickHandler }: any) => {
               placeholder="Search"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-            ></input>
+            />
           </div>
         )}
       </div>
