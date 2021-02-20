@@ -1,5 +1,4 @@
 {
-  "extends": "./tsconfig.paths.json",
   "exclude": [
     "node_modules",
     "build",
@@ -9,27 +8,17 @@
     "jest",
     "src/setupTests.ts"
   ],
-  "types": [
-    "typePatches"
-  ],
-  "include": [
-    "src/**/*",
-    "*.ts",
-    "*.tsx"
-  ],
+  "types": ["typePatches"],
+  "include": ["src", "*.ts", "*.tsx"],
   "compilerOptions": {
-    "outDir": "build/dist",
-    "module": "esnext",
     "target": "es6",
-    "lib": [
-      "es6",
-      "dom"
-    ],
+    "lib": ["es6", "dom"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "strict": false,
+    "strictPropertyInitialization": false,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
@@ -37,6 +26,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "module": "esnext",
+    "baseUrl": "./src"
   }
 }

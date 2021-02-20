@@ -1,0 +1,33 @@
+.button--floating {
+  margin: 1rem 0.5rem;
+  padding: 0.5rem;
+  border: 2px solid var(--color-secondary);
+  border-radius: 50%;
+  box-shadow: 0 0 30px var(--color-shadow);
+
+  transition: transform 0.2s ease-in-out;
+
+  &--hidden {
+    display: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-1px);
+    background: var(--color-primary);
+  }
+
+  &:active {
+    transform: translateY(0);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  // phone
+  @media screen and (max-width: 480px) {
+    margin: 0 0.5rem;
+  }
+}

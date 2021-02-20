@@ -25,10 +25,14 @@
 //   background-color: #555;
 // }
 
+// ============ CSS VARIABLES ============
 :root {
+  --app-width: 1400px;
   --color-card-primary: #ff7b54;
+  --color-text-primary: #fff;
 }
 
+// ============ ELEMENT STYLES ============
 body {
   font-family: 'Quicksand', Arial;
   margin: auto;
@@ -41,11 +45,36 @@ img {
   max-height: 100%;
 }
 
-// .app {
-//   display: grid;
-//   grid-template-columns: 3fr 7fr;
-//   /*   max-height: 100vh; */
-// }
+h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+h2 {
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+h4 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+h5 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+// ============ CLASS STYLES ============
+.container {
+  &--full-width {
+    width: 100%;
+  }
+  &--app-width {
+    max-width: var(--app-width);
+  }
+}
 
 // .sidebar {
 //   grid-column: 1 / 2;
@@ -259,3 +288,13 @@ img {
 //   opacity: 0.01;
 //   transition: opacity 300mx ease-in;
 // }
+
+button {
+  display: inline-block;
+  border: none;
+  text-decoration: none;
+  font-size: 100%;
+  font-family: inherit;
+  text-align: center;
+  cursor: pointer;
+}

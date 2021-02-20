@@ -1,23 +1,128 @@
+// .recipe {
+//   --card-width: 25rem;
+//   font-size: 1.75rem;
+//   max-width: var(--card-width);
+//   margin: 2rem;
+//   opacity: 1;
+//   position: relative;
+
+//   &__front {
+//     position: relative;
+//     z-index: 5;
+
+//     // &::after {
+//     //   content: '';
+//     //   position: absolute;
+//     //   top: 8rem;
+//     //   border-top: 1rem solid var(--color-card-primary);
+//     //   border-left: 1rem solid transparent;
+//     //   margin-bottom: auto;
+//     // }
+//   }
+
+//   &__image {
+//     max-width: calc(var(--card-width) - 1rem);
+//     object-fit: cover;
+//     max-height: 20rem;
+//     overflow: hidden;
+//     margin-left: auto;
+//   }
+
+//   &__front-info {
+//     padding: 2rem 1rem;
+//     background: var(--color-card-primary);
+//     margin-left: auto;
+//     // border: 1px solid black;
+//     // border-radius: 5px;
+//   }
+
+//   &__back-right {
+//     width: 50%;
+//     min-height: 100%;
+//     max-height: 100%;
+//     margin: auto;
+//     overflow-y: scroll;
+//     font-size: 1.2rem;
+//     position: absolute;
+//     right: -50%;
+//     top: 0;
+//     transform: rotateY(-180deg);
+//     transform-origin: left;
+//     opacity: 0.5;
+//     transition: transform 400ms ease-out;
+//   }
+
+//   &__ingredients {
+//     display: flex;
+//     flex-direction: column;
+//     place-items: center;
+//     border-left: 2px solid orange;
+
+//     // max-width: calc(100% - 1rem);
+//     padding: 2rem 0.75rem 1rem 0.75rem;
+//     width: 100%;
+//     height: 100%;
+//     background: var(--color-card-primary);
+//     // border-top-right-radius: 1vmax;
+//     // border-bottom-right-radius: 1vmax;
+//   }
+
+//   &:hover {
+//     .recipe__back-right {
+//       opacity: 1;
+//       transform: rotateY(0deg);
+//     }
+//   }
+
+//   &__ingredient {
+//     &--menu {
+//       z-index: 5;
+//       background: #008891;
+//       min-width: 8rem;
+//       border-radius: 100vmax;
+//       padding: 0.3rem 0.25rem;
+//       position: absolute;
+//       top: -1.5rem;
+//       font-size: 1.75rem;
+
+//       display: flex;
+//       justify-content: space-around;
+
+//       .icon {
+//         cursor: pointer;
+//       }
+//     }
+//   }
+
+//   td:nth-child(2) {
+//     text-align: left;
+//     padding-left: 0.5rem;
+//   }
+// }
+
+// ============ FLIPPING ============
 .recipe {
   --card-width: 25rem;
-  font-size: 1.5rem;
+  --transition-flip: 500ms ease;
+  --transition-fade: 500ms ease;
   max-width: var(--card-width);
+  font-size: 1.75rem;
   margin: 2rem;
-  opacity: 1;
   position: relative;
 
   &__front {
     position: relative;
-    z-index: 5;
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 8rem;
-      border-top: 1rem solid var(--color-card-primary);
-      border-left: 1rem solid transparent;
-      margin-bottom: auto;
-    }
+    z-index: 10;
+    background: rgba(255, 123, 84, 1);
+    transition: transform var(--transition-flip), opacity var(--transition-fade),
+      visibility var(--transition-fade);
+    transform-origin: right;
+    visibility: visible;
+  }
+  &:hover > &__front {
+    transform: rotateY(180deg);
+    opacity: 0;
+    visibility: hidden;
   }
 
   &__image {
@@ -34,109 +139,64 @@
     margin-left: auto;
   }
 
+  &__back-left,
   &__back-right {
     width: 100%;
     height: 100%;
-    margin: auto;
+    background: var(--color-card-primary);
     font-size: 1.2rem;
     position: absolute;
-    right: -100%;
     top: 0;
+  }
+
+  &__back-right {
+    padding: 1rem 0.5rem;
+    max-height: 100%;
+    overflow-y: scroll;
     transform: rotateY(-180deg);
     transform-origin: left;
-    opacity: 0.5;
-    transition: transform 400ms ease-out;
+    left: 100%;
+    transition: transform var(--transition-flip);
+  }
+  &:hover > &__back-right {
+    transform: rotateY(0deg);
   }
 
   &__ingredients {
-    border-left: 2px solid orange;
-
-    max-width: calc(100% - 1rem);
-    padding: 2rem 1rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    padding: 2rem 0.75rem 1rem 0.75rem;
+    margin-right: 1rem;
     width: 100%;
     height: 100%;
     background: var(--color-card-primary);
-    border-top-right-radius: 1vmax;
-    border-bottom-right-radius: 1vmax;
   }
 
-  &:hover {
-    .recipe__back-right {
-      opacity: 1;
-      transform: rotateY(0deg);
-    }
-  }
+  // &:hover {
+  //   .recipe__back-right {
+  //     opacity: 1;
+  //     transform: rotateY(0deg);
+  //   }
+  // }
 
-  &__ingredient {
-    td:first-child {
-      position: relative;
-    }
-    &--menu {
-      z-index: 5;
-      background: #008891;
-      min-width: 8rem;
-      border-radius: 100vmax;
-      padding: 0.3rem 0.25rem;
-      position: absolute;
-      top: -1.5rem;
-      font-size: 1.75rem;
+  // &__ingredient {
+  //   &--menu {
+  //     z-index: 5;
+  //     background: #008891;
+  //     min-width: 8rem;
+  //     border-radius: 100vmax;
+  //     padding: 0.3rem 0.25rem;
+  //     position: absolute;
+  //     top: -1.5rem;
+  //     font-size: 1.75rem;
 
-      display: flex;
-      justify-content: space-around;
+  //     display: flex;
+  //     justify-content: space-around;
 
-      .icon {
-        cursor: pointer;
-      }
-    }
-  }
-
-  td:nth-child(2) {
-    text-align: left;
-    padding-left: 0.5rem;
-  }
+  //     .icon {
+  //       cursor: pointer;
+  //     }
+  //   }
+  // }
 }
-
-// .selected {
-//   margin: 2rem 1rem;
-//   background: #ff7b54;
-//   display: flex;
-
-//   min-height: 30vh;
-//   max-width: 900px;
-//   font-size: 1.4rem;
-//   border-radius: 1vmax;
-
-//   &__name {
-//     font-size: 2.2rem;
-//   }
-
-//   &__side {
-//     width: 50%;
-//     padding: 1rem;
-//     text-align: center;
-
-//     &--left {
-//       border-right: 2px solid black;
-//       display: flex;
-
-//       table {
-//         text-align: right;
-//         margin: 0 auto;
-//       }
-//     }
-
-//     &--right {
-//       display: flex;
-//     }
-//   }
-
-//   .container {
-//     margin: auto;
-
-//     & > div {
-//       margin: 0.25rem 0;
-//     }
-//   }
-
-// }
-// }
